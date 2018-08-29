@@ -91,4 +91,14 @@ Salir nuevamente con la misma combinación de teclas. (*:* luego *w* luego *q* l
 Pruebe el servicio recién construido en la siguiente dirección: <br/>
 http://localhost:8081/sum?num1=2&num2=2
 
+El programa completo debería verse de la siguiente forma:
+```javascript
+app.get('/sum', function (req, res) {
+        var num1 = parseInt(req.query.num1);
+        var num2 = parseInt(req.query.num2);
+        var result = num1 + num2;
+        res.set('Content-Type', 'application/json');
+        res.end('{"result": {"operation":' +num1+"+"+num2+', "result":'+result+'}}');
+})
+```
 #The End - por ahora
