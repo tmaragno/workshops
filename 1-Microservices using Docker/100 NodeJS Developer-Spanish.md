@@ -68,10 +68,27 @@ npm i
 
 node server.js 
 ```
-Para finalizar este laboratorio, por favor abra un explorador (Firefox por ejemplo) y pruebe abriendo la siguiente dirección: http://localhost:8081/status <cr>
+Ahora prombamos si todo funciona. Por favor abra un explorador (Firefox por ejemplo) y pruebe abriendo la siguiente dirección: http://localhost:8081/status<br/>
 El resultado debería ser el siguiente:
 ```json
 {"status": {"message": "Hi! All working here!"}}
 ```
+Finalmente vamos a crear un segundo método GET que nos permita sumar dos números. De allí ustedes pueden agregarle el código que quieran - si así lo desean.  
+  
+Después del cierre del paréntesis del método `app.get('/status', function (req, res) {` inserte el siguiente snippet de código:
+
+```javascript
+app.get('/sum', function (req, res) {
+        var num1 = parseInt(req.query.num1);
+        var num2 = parseInt(req.query.num2);
+        var result = num1 + num2;
+        res.set('Content-Type', 'application/json');
+        res.end('{"result": {"operation":' +num1+"+"+num2+', "result":'+result+'}}');
+})
+```
+Salir nuevamente con la misma combinación de teclas. (*:* luego *w* luego *q* luego *enter*)
+
+Pruebe el servicio recién construido en la siguiente dirección: <br/>
+http://localhost:8081/sum?num1=2&num2=2
 
 #The End - por ahora
