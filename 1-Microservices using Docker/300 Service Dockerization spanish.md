@@ -133,6 +133,15 @@ ee9b23f7027f        tmaragno/node-client   "npm start"         35 seconds ago   
 ```
 Prueben nuevamente lo servicios y asegurense que todo siga funcionando.
 
+Finalmente vamos a hacer un Docker push de las imágenes que creamos a nuestro usuario en Docker Hub. Esto lo realizamos ejecutando los siguientes comandos.
+```shell
+docker login
+docker push <username>/node-server:latest
+docker push <username>/node-client:latest
+```
+Si entramos a nuestro espacio en Docker Hub, podremos ver las imagenes que acabamos de entregar. (www.dockerhub.com)
+![alt text](https://github.com/tmaragno/workshops/blob/master/images/dockerhub.PNG "Docker hub image")
+
 # Fin parte 3
 
 
