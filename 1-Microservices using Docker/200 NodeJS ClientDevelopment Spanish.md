@@ -1,7 +1,7 @@
-#Desarrollo de un cliente que consume la operación del primer servicio
+# Desarrollo de un cliente que consume la operación del primer servicio
 En este laboratorio vamos a construir un servicio REST que hace uso de la suma que construimos en el primer taller. Para esto vamos a crear un archivo denominado *client.js* dentro de una nueva carpeta. El servicio será muy parecido, sin embargo podrán ver como podemos ir construyendo una arquitectura basada en microservicios. 
 
-##Desarrollar el cliente NodeJS
+## Desarrollar el cliente NodeJS
 El desarrollo del cliente es muy parecido al taller anterior. Si seguimos dentro de la carpeta del taller anterior, debemos salirnos antes de empezar. Crear una nueva carpeta para el cliente.
 ```shell
 mkdir RESTClient
@@ -67,4 +67,4 @@ El resultado debería ser el siguiente:
 ```json
 {"result": {"result":10}}
 ```
-#Fin parte 2
+# Fin parte 2
