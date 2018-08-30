@@ -26,7 +26,7 @@ COPY . .
 ```
 Los contenedores Docker por defecto están aislados del mundo exterior. Dado que estamos construyendo un servicio web, tenemos que permitir la comunicación entre el mundo exterior y su contenedor. Lo ideal sería hacerlo a través de variables de entorno (como está definido en el código) para para mantenerlo simple vamos a exponer el puerto que necesitamos.
 ```docker
-EXPOSE 8080
+EXPOSE 8081
 ```
 Finalmente el contenedor necesita ejecutar algo. La última línea del Dockerfile en nuestro caso debe ser el comando de ejecución del servidor. 
 ```docker
@@ -130,7 +130,9 @@ Si listan los contenedores que tienen corriendo(*docker ps*), debería verse alg
 CONTAINER ID        IMAGE                  COMMAND             CREATED             STATUS              PORTS                    NAMES
 ee9b23f7027f        tmaragno/node-client   "npm start"         35 seconds ago      Up 34 seconds       0.0.0.0:8082->8082/tcp   client
 3ede7da7a304        tmaragno/node-server   "npm start"         4 minutes ago       Up 4 minutes        0.0.0.0:8081->8081/tcp   server
-
 ```
+Prueben nuevamente lo servicios y asegurense que todo siga funcionando.
+
+# Fin parte 3
 
 
