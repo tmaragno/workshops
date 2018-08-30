@@ -1,7 +1,7 @@
 # Desarrollo de un servidor NodeJS
 A continuación se proporcionan los pasos a seugir para demostrar la funcionalidad de Docker y como se puede emplear para construir una aplicación levemente acoplada siguiendo un patrón de diseño de microservicios. En primer lugar y objetivo de esta guia será el desarrollo de un servidor de servicios web REST que retorna el resultado de una operación matemática muy compleja. ;)
 
-## Desarrollar la aplicación NodeJS
+## Desarrollar el servidor NodeJS
 Instale NodeJS usando los siguiente comando
 ```sh
 cd /etc/yum.repos.d
@@ -122,4 +122,5 @@ server = app.listen(PORT, function () {
 })
 
 ```
+
 #The End - por ahora
