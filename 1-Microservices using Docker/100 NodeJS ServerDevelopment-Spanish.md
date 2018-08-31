@@ -85,7 +85,7 @@ app.get('/sum', function (req, res) {
         var num2 = parseInt(req.query.num2);
         var result = num1 + num2;
         res.set('Content-Type', 'application/json');
-        res.end('{"result": {"operation":' +num1+"+"+num2+', "result":'+result+'}}');
+        res.end('{"result": {"operation":"' +num1+"+"+num2+'", "result":'+result+'}}');
 })
 ```
 Salir nuevamente con la misma combinación de teclas. (*:* luego *w* luego *q* luego *enter*)
