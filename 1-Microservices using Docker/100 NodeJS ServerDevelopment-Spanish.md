@@ -16,6 +16,7 @@ mkdir RESTServer
 ```
 A continuación debemos crear un archivo denominado *package.json* que contenga el contenido descrito abajo.
 ```sh
+cd RESTServer
 vi package.json
 ```
 Para poder editar el archivo presionar la siguiente combinación de teclas *i* *pegue el json abajo* y luego *esc*
