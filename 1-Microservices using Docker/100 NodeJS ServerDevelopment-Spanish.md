@@ -11,6 +11,7 @@ sudo yum install nodejs
 
 Cree un directorio en la maquina virtual denominado *RESTServer* como se muestra a continuación.
 ```sh
+cd $HOME
 mkdir RESTServer
 ```
 A continuación debemos crear un archivo denominado *package.json* que contenga el contenido descrito abajo.
