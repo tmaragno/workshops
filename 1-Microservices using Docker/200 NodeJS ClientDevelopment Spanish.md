@@ -45,8 +45,6 @@ app.get('/div', function (req, res) {
 	var num1 = parseInt(req.query.num1);
 	var num2 = parseInt(req.query.num2);
        client.get("http://localhost:8081/sum?num1="+req.query.num1+"&num2="+req.query.num2, function (data, response) {
-			//console.log(data);
-			//console.log(response);
 			var result = num1/num2;
 			res.set('Content-Type', 'application/json');
 			res.end('{"result": {"result":'+result+'}}');
