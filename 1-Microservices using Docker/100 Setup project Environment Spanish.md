@@ -7,4 +7,4 @@ En este laboratorio inicial vamos a actuar como el líder del equipo/proyecto y 
 
 ## Creación del proyecto
 Una vez creada la instancia de developer cloud service, ingresamos a su consola y creamos un nuevo proyecto tal como se muestra en la figura a continuación.
-![alt text](https://github.com/tmaragno/workshops/blob/master/images/100_Image_1.PNG "New Project")
+![alt text](https://github.com/tmaragno/workshops/images/100_Image_1.PNG "New Project")
