@@ -2,6 +2,12 @@
 En este laboratorio vamos a construir un servicio REST que hace uso de la suma que construimos en el primer taller. Para esto vamos a crear un archivo denominado *client.js* dentro de una nueva carpeta. El servicio será muy parecido, sin embargo podrán ver como podemos ir construyendo una arquitectura basada en microservicios. 
 
 ## Desarrollar el cliente NodeJS
+En primer lugar vamos a colocar la tarea en Developer Cloud Service para indicar que el trabajo se encuentra en progreso. En la pantalla principal del proyecto, navege hacia la sección "Issues" como se puede ver en la imagen
+
+![Issue in progress](https://github.com/tmaragno/workshops/blob/master/images/200_Image_1.png)
+
+Repetimos los pasos que hicimos en el lab 200 pero ahora con la otra tarea.
+
 El desarrollo del cliente es muy parecido al taller anterior. Si seguimos dentro de la carpeta del taller anterior, debemos salirnos antes de empezar. Crear una nueva carpeta para el cliente.
 ```shell
 mkdir RESTClient
