@@ -11,10 +11,12 @@ sudo yum install nodejs
 
 Cree un directorio en la maquina virtual denominado *RESTServer* como se muestra a continuación.
 ```sh
+cd $HOME
 mkdir RESTServer
 ```
 A continuación debemos crear un archivo denominado *package.json* que contenga el contenido descrito abajo.
 ```sh
+cd RESTServer
 vi package.json
 ```
 Para poder editar el archivo presionar la siguiente combinación de teclas *i* *pegue el json abajo* y luego *esc*
@@ -83,7 +85,7 @@ app.get('/sum', function (req, res) {
         var num2 = parseInt(req.query.num2);
         var result = num1 + num2;
         res.set('Content-Type', 'application/json');
-        res.end('{"result": {"operation":' +num1+"+"+num2+', "result":'+result+'}}');
+        res.end('{"result": {"operation":"' +num1+"+"+num2+'", "result":'+result+'}}');
 })
 ```
 Salir nuevamente con la misma combinación de teclas. (*:* luego *w* luego *q* luego *enter*)
