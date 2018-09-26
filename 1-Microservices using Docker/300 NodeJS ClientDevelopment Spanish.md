@@ -11,7 +11,7 @@ A continuación, crear el archivo *package.json* como se ilustra a continuación
 {
     "name": "rest_client",
     "version": "1.0.0",
-    "description": "NodeJS server",
+    "description": "NodeJS Client",
     "author": "Primer Nombre <tuemail@email.com>",
     "main": "client.js",
     "scripts": {

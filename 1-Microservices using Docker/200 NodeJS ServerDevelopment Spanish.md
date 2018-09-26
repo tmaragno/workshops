@@ -2,6 +2,17 @@
 A continuación se proporcionan los pasos a seugir para demostrar la funcionalidad de Docker y como se puede emplear para construir una aplicación levemente acoplada siguiendo un patrón de diseño de microservicios. En primer lugar y objetivo de esta guia será el desarrollo de un servidor de servicios web REST que retorna el resultado de una operación matemática muy compleja. ;)
 
 ## Desarrollar el servidor NodeJS
+En primer lugar vamos a colocar la tarea en Developer Cloud Service para indicar que el trabajo se encuentra en progreso. En la pantalla principal del proyecto, navege hacia la sección "Issues" como se puede ver en la imagen
+
+![Issue in progress](https://github.com/tmaragno/workshops/blob/master/images/200_Image_1.png)
+
+Una vez que veamos las tareas disponibles, procedemos a mover arrastrando el "Story 1" a la casilla "In Progress". A continuación la imagen con el ejemplo.
+
+![Issue in progress](https://github.com/tmaragno/workshops/blob/master/images/200_Image_2.png)
+![Issue in progress](https://github.com/tmaragno/workshops/blob/master/images/200_Image_3.png)
+
+Una vez realizados estos pasos podemos volver a nuestra maquina virtual y seguir.
+<br/>
 Instale NodeJS usando los siguiente comando
 ```sh
 cd /etc/yum.repos.d
