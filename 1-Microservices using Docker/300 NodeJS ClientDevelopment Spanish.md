@@ -4,7 +4,7 @@ En este laboratorio vamos a construir un servicio REST que hace uso de la suma q
 ## Desarrollar el cliente NodeJS
 En primer lugar vamos a colocar la tarea en Developer Cloud Service para indicar que el trabajo se encuentra en progreso. En la pantalla principal del proyecto, navege hacia la sección "Issues" como se puede ver en la imagen
 
-![Issue in progress](https://github.com/tmaragno/workshops/blob/master/images/200_Image_1.png)
+![Issue in progress](https://github.com/tmaragno/workshops/blob/master/images/300_Image_1.png)
 
 Repetimos los pasos que hicimos en el lab 200 pero ahora con la otra tarea.
 
