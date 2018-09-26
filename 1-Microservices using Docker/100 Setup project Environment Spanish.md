@@ -66,6 +66,7 @@ Finalmente, iniciamos el sprint. Siga las instrucciones en las imagenes a contin
 ![New Issues](https://github.com/tmaragno/workshops/blob/master/images/100_Image_20.png)
 ![New Issues](https://github.com/tmaragno/workshops/blob/master/images/100_Image_21.png)
 ![New Issues](https://github.com/tmaragno/workshops/blob/master/images/100_Image_22.png)
+![New Issues](https://github.com/tmaragno/workshops/blob/master/images/100_Image_23.png)
 
 Con esto finalizamos el laboratorio 100.
 
