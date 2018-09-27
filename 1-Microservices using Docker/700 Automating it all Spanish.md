@@ -1,7 +1,7 @@
 # Automatizando todo el ciclo de vida
 El objetivo de este último laboratorio es mostrar como podemos automatizar el ciclo de vida completo del desarrollo, sin tener que pasar por tareas manuales como hemos estado haciendo con anterioridad. La idea detrás de esto es que desde un commit a la rama maestra de nuestro proyecto, se genere una nueva imagen que contiene el código fuente modificado, se realicen las pruebas unitarias(No parte de esta serie de laboratorios) y finalmente se haga el deployment en un entorno de ejecución para contenedores como lo es Oracle Container Cloud Service.
 
-## Creación del archivo requerido para la orchestación
+## Creación del archivo requerido para la orquestación
 El archivo que van a crear debe encontrarse en la raiz del repositorio "ServerRepo" y se debe llamar "wercker.yml". A continutación tienen el código del archivo:
 ```yaml
 box: node
