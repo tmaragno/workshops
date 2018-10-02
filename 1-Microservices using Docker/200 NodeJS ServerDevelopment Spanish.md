@@ -15,6 +15,7 @@ Una vez realizados estos pasos podemos volver a nuestra maquina virtual y seguir
 <br/>
 En caso de no estar instalado, instale NodeJS usando los siguiente comando
 ```sh
+#para ver si está instalado ejecutar node -v
 cd /etc/yum.repos.d
 curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
 sudo yum install nodejs
