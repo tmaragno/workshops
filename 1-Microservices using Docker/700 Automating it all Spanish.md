@@ -32,7 +32,7 @@ Este archivo lo vamos a generar directamente en el repositorio desde la interfaz
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_1.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_2.png)
 
-El proximo paso es logearnos a nuestra cuenta en Wercker.com y generar una nueva aplicación.
+El proximo paso es logearnos a nuestra cuenta en Wercker.com y generar una nueva aplicación. (Si no tenemos cuenta podemos abrir una)
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_3.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_4.png)
