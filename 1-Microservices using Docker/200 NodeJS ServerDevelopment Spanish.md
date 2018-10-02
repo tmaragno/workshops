@@ -13,7 +13,7 @@ Una vez que veamos las tareas disponibles, procedemos a mover arrastrando el "St
 
 Una vez realizados estos pasos podemos volver a nuestra maquina virtual y seguir.
 <br/>
-Instale NodeJS usando los siguiente comando
+En caso de no estar instalado, instale NodeJS usando los siguiente comando
 ```sh
 cd /etc/yum.repos.d
 curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
