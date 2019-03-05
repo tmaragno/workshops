@@ -2,30 +2,56 @@
 El objetivo de este último laboratorio es mostrar como podemos automatizar el ciclo de vida completo del desarrollo, sin tener que pasar por tareas manuales como hemos estado haciendo con anterioridad. La idea detrás de esto es que desde un commit a la rama maestra de nuestro proyecto, se genere una nueva imagen que contiene el código fuente modificado, se realicen las pruebas unitarias(No parte de esta serie de laboratorios) y finalmente se haga el deployment en un entorno de ejecución para contenedores como lo es Oracle Container Cloud Service.
 
 ## Creación del archivo requerido para la orquestación
-El archivo que van a crear debe encontrarse en la raiz del repositorio "ServerRepo" y se debe llamar "wercker.yml". A continutación tienen el código del archivo:
+El archivo que van a crear debe encontrarse en la raiz del repositorio y se debe llamar "wercker.yml". A continutación tienen el código del archivo:
 ```yaml
-box: node
+box: python:2.7
 build:
   steps:    
     - internal/docker-build: 
         dockerfile: Dockerfile 
         image-name: my-new-image # temporary name used to refer to this image in a subsequent step
-    - internal/docker-push: 
-        image-name: my-new-image
-        username: $USERNAME # Docker Hub username. When using CLI, set using "export X_USERNAME="  
-        password: $PASSWORD # Docker Hub password. When using CLI, set using "export X_PASSWORD=" 
-        registry: https://registry.hub.docker.com/v2
-        repository: $USERNAME/node-server
-        tag: latest
-restart-occs:
-  steps:
-    # Manage Oracle Container Cloud Service container test	
-    - peternagy/oracle-occs-container-util:
-        occs_user: $OCCS_USER
-        occs_password: $OCCS_PASSWORD
-        rest_server_url: $REST_SERVER_URL
-        function: $FUNCTION
-        deployment_name: $DEPLOYMENT_NAME
+    - internal/docker-push:
+            entrypoint: bin/get_ip
+            cmd: 0.0.0.0 8080
+            image-name: my-new-image
+            tag: participant01
+            ports: "8080"
+            username: $DOCKER_USERNAME
+            password: $DOCKER_PASSWORD
+            repository: $DOCKER_REPO
+            registry: https://phx.ocir.io/v2
+deploy-to-kubernetes:
+    box: python:2.7
+    steps:
+
+    - bash-template
+    - script:
+        name: Prepare Kubernetes files
+        code: |
+          mkdir $WERCKER_OUTPUT_DIR/kubernetes
+          mv kubernetes_*.yml $WERCKER_OUTPUT_DIR/kubernetes
+    
+    - kubectl:
+        name: deploy to kubernetes
+        server: $OKE_MASTER
+        token: $OKE_TOKEN
+        insecure-skip-tls-verify: true
+        command: apply -f $WERCKER_OUTPUT_DIR/kubernetes/
+
+   
+    - kubectl:
+        name: set deployment timeout
+        server: $OKE_MASTER
+        token: $OKE_TOKEN
+        insecure-skip-tls-verify: true
+        command: patch deployment/get-ip -p '{"spec":{"progressDeadlineSeconds":60}}'
+
+    - kubectl:
+        name: check deployment status
+        server: $OKE_MASTER
+        token: $OKE_TOKEN
+        insecure-skip-tls-verify: true
+        command: rollout status deployment/get-ip
 ```
 Este archivo lo vamos a generar directamente en el repositorio desde la interfaz web de Developer Cloud Service. El contenido del archivo lo podemos discutir en la sesión en vivo. En las imágenes a continuación se ilustra el proceso. Simplemente agregamos un nuevo archivo en la raiz, pegamos el contenido y le damos commit. Las imágenes a continuación ilustran el proceso.
 

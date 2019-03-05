@@ -11,7 +11,10 @@ cd /etc/yum.repos.d
 curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
 sudo yum install nodejs
 ```
-
+Luego instale git para el control de versiones
+```sh
+sudo yum install git
+```
 Cree un directorio en la maquina virtual denominado *RESTServer* como se muestra a continuación.
 ```sh
 cd $HOME
