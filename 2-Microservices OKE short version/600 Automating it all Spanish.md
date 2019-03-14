@@ -68,11 +68,12 @@ El URL del ambiente se le compartirá en la sesión. Un ejemplo del ambiente est
 https://devcsinstance-<IDDOMAIN>.uscom-central-1.oraclecloud.com/devcsinstance-<IDDOMAIN>
 ```
 Seleccionamos el repositorio desado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_6.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
+
 
 Llenamos los datos de repo y usuario que se compartieron durante el workshop.
 
-![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_6.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_7.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_8.png)
 
