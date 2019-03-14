@@ -13,7 +13,7 @@ build:
     - internal/docker-push:
             cmd: 0.0.0.0 8080
             image-name: my-new-image
-            tag: participant01
+            tag: participant<NUMERO PARTICIPANTE>
             ports: "8080"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
@@ -42,14 +42,14 @@ deploy-to-kubernetes:
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: patch deployment/restserver01 -p '{"spec":{"progressDeadlineSeconds":60}}'
+        command: patch deployment/restserver<NUMERO PARTICIPANTE> -p '{"spec":{"progressDeadlineSeconds":60}}'
 
     - kubectl:
         name: check deployment status
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: rollout status deployment/restserver01
+        command: rollout status deployment/restserver<NUMERO PARTICIPANTE>
 
 ```
 Este archivo lo vamos a generar directamente en la raiz del proyecto. El contenido del archivo lo podemos discutir en la sesión en vivo. 
@@ -155,7 +155,7 @@ git push origin <RAMA PARTICIPANTE>
 ```
 En el momento que se realiza el commit, podemos ver que se dispara una nueva corrida en wercker. Una vez terminada esta corrida, si vamos a la consola de Oracle Container Cloud Service, podemos observar como se detiene el contenedor y después de un momento inicia la creación nuevamente del mismo. Las imágenes a continuación ilustran un ejemplo basado en mi corrida.
 
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_22.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short05.png)
 
 Finalmente si ejecutamos nuevamente el servicio como hicimos antes podemos ver como cambió el código con los cambios que realizaron. 
 
