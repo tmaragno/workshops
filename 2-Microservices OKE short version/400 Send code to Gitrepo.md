@@ -21,7 +21,7 @@ git add –A
 #Se genera un conjunto de cambios con el mensaje deseado
 git commit -m "Entrega version .1 del servidor"
 #Enviamos el conjunto de cambios al repositorio en la nube.
-git push origin master
+git push origin rama<NUMERO PARTICIPANTE>
 ```
 
 ##FIN

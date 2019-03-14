@@ -11,7 +11,6 @@ build:
         dockerfile: Dockerfile 
         image-name: my-new-image # temporary name used to refer to this image in a subsequent step
     - internal/docker-push:
-            entrypoint: bin/get_ip
             cmd: 0.0.0.0 8080
             image-name: my-new-image
             tag: participant01
@@ -28,7 +27,7 @@ deploy-to-kubernetes:
     - script:
         name: Prepare Kubernetes files
         code: |
-          mkdir $WERCKER_OUTPUT_DIR/kubernetes
+          mkdir -p $WERCKER_OUTPUT_DIR/kubernetes
           mv kubernetes_*.yml $WERCKER_OUTPUT_DIR/kubernetes
     
     - kubectl:
@@ -37,26 +36,23 @@ deploy-to-kubernetes:
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
         command: apply -f $WERCKER_OUTPUT_DIR/kubernetes/
-
    
     - kubectl:
         name: set deployment timeout
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: patch deployment/get-ip -p '{"spec":{"progressDeadlineSeconds":60}}'
+        command: patch deployment/restserver01 -p '{"spec":{"progressDeadlineSeconds":60}}'
 
     - kubectl:
         name: check deployment status
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: rollout status deployment/get-ip
-```
-Este archivo lo vamos a generar directamente en el repositorio desde la interfaz web de Developer Cloud Service. El contenido del archivo lo podemos discutir en la sesión en vivo. En las imágenes a continuación se ilustra el proceso. Simplemente agregamos un nuevo archivo en la raiz, pegamos el contenido y le damos commit. Las imágenes a continuación ilustran el proceso.
+        command: rollout status deployment/restserver01
 
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_1.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_2.png)
+```
+Este archivo lo vamos a generar directamente en la raiz del proyecto. El contenido del archivo lo podemos discutir en la sesión en vivo. 
 
 El proximo paso es logearnos a nuestra cuenta en Wercker.com y generar una nueva aplicación. (Si no tenemos cuenta podemos abrir una)
 
@@ -67,12 +63,16 @@ La nueva aplicación estará amarrada a nuestro repositorio creado en Developer 
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_5.png)
 
-Por ejemplo la URL de mi ambiente es la siguiente:
+El URL del ambiente se le compartirá en la sesión. Un ejemplo del ambiente está a continuación:
 ```URL
 https://devcsinstance-<IDDOMAIN>.uscom-central-1.oraclecloud.com/devcsinstance-<IDDOMAIN>
 ```
 Seleccionamos el repositorio desado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_6.png)
+
+Llenamos los datos de repo y usuario que se compartieron durante el workshop.
+
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_7.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_8.png)
 
@@ -85,7 +85,10 @@ El primer build falló, ya que tenemos unas variables de entorno definidas en nu
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_11.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_12.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_13.png)
+
+La imágen a continuación lista las variables de entorno que debemos configurar. Los valores de los campos secretos los pueden encontrar en la carpeta de recursos.
+
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short02.png)
 
 Luego de configurados las variables con nuestros datos volvemos a ejecutar el workflow.
 
@@ -103,22 +106,18 @@ La imágen a continuación muestra un ejemplo de como configurar el nuevo pipeli
 
 Nuevamente, el paso del pipeline para detener el contenedor requiere algunas variables de entorno para poder ejecutar. Estas las definimos de la misma forma que antes, sin embargo la imagen muestra un ejemplo.
 
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_19.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short03.png)
 
 Para que este pipeline se ejecute, debemos agregarlo al "Workflow" que tenemos definido. Para esto regresamos a la pestaña "Workflow" (paso 2 de la imagen anterior) y lo agregamos como se muestra en las imágenes a continuación.
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_20.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_21.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short04.png)
 
-Ahora para la gran final! Vamos a realizar un cambio al código del servidor REST. Este cambio lo vamos a hacer directamente en la rama maestra para ahorrar un poco de tiempo. El extracto a continuación tiene los comandos que se deben ejecutar uno a uno.
+Ahora para la gran final! Vamos a realizar un cambio al código del servidor REST. El extracto a continuación tiene los comandos que se deben ejecutar uno a uno.
 ```sh
-git checkout master
-git pull
 vi server.js
 ```
-Para explicar brevemente que hacen estos comandos. En primer lugar nos aseguramos que estemos en la rama maestra y no en la rama REQ1 del laboratorio anterior. Actualizamos el repositorio con los nuevos cambios ejecutando un pull request. (Recuerden que agregamos el archivo wercker.yml) Como último editamos el archivo server.js. (Esto podemos hacerlo con gedit en vez de vi si preferimos).<br/>
-
-Los cambios del archivo son:
+Los cambios del archivo se muestran abajo. Vamos a agregar nuestro nombre en el status:
 ```JS
 var express = require('express');
 var app = express();
@@ -151,18 +150,14 @@ server = app.listen(PORT, function () {
 Finalmente debemos entregar los cambios al repositorio como hemos hecho antes. A continuación el extracto con los comandos a ejecutar uno a uno.
 ```sh
 git add server.js
-git commit -m 'Cambios realizados al servidor para laboratorio 700'
-git push
+git commit -m 'Cambios realizados al servidor para laboratorio.'
+git push origin <RAMA PARTICIPANTE>
 ```
 En el momento que se realiza el commit, podemos ver que se dispara una nueva corrida en wercker. Una vez terminada esta corrida, si vamos a la consola de Oracle Container Cloud Service, podemos observar como se detiene el contenedor y después de un momento inicia la creación nuevamente del mismo. Las imágenes a continuación ilustran un ejemplo basado en mi corrida.
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_22.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_23.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_24.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_25.png)
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_26.png)
 
-Finalmente si abrimos la URL nuevamente y ejecutamos el método /status podemos ver como cambió el código con los cambios que realizaron ustedes. 
+Finalmente si ejecutamos nuevamente el servicio como hicimos antes podemos ver como cambió el código con los cambios que realizaron. 
 
 # FIN
 

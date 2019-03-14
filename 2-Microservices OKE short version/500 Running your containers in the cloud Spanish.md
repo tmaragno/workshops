@@ -25,6 +25,12 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 ```
+
+Para instalar las herramientas de Kubernetes ejecutar el siguiente comando:
+```sh
+sudo yum install -y kubelet kubeadm kubectl
+```
+
 Para probar que la instalación fue exitosa vamos a ejecutar el siguiente comando. Igualmente les coloco un ejemplo de un resultado esperado.
 ```sh
 kubectl version
@@ -79,7 +85,76 @@ NAME              STATUS   ROLES   AGE   VERSION
 129.146.61.156    Ready    node    94d   v1.11.1
 129.146.70.125    Ready    node    94d   v1.11.1
 ```
+Para poder crear contenedores basados vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster.
 
+```yaml
+# This template file will have its environment variables expanded
+# and the .template extension removed by the bash-template Wercker step.
+# See wercker.yml.
+ 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: restserver<NUMERO PARTICIPANTE>
+  labels:
+    commit: participant<NUMERO PARTICIPANTE>
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: restserver<NUERO PARTICIPANTE>
+  template:
+    metadata:
+      labels:
+        app: restserver
+        commit: participant<NUMERO PARTICIPANTE>
+    spec:
+      containers:
+      - name: restserver
+        image: phx.ocir.io/gse00014124/workshoprepo:participant<NUMERO PARTICIPANTE>
+        ports:
+          - containerPort: 8081
+      imagePullSecrets:
+      - name:  demosecret
+```
+Para crear la app ejecutamos el siguiente comando:
+
+```sh
+kubectl create -f .\kubernetes_deployment.yml.template
+```
+
+Podemos probar nuestro deployment usando la capacidad de port forwarding de kubectl, tal como se muestra en el ejemplo a continuación. En primer lugar obtenemos todos los "pods" que están corriendo en el cluster y luego realizamos el port forwarding para poder conectarnos a el.
+
+```sh
+kubectl get pods
+
+NAME                                    READY   STATUS    RESTARTS   AGE
+hello-k8s-deployment-6dcbb9998b-hwmhx   1/1     Running   0          104d
+quickstart-se-55f88c4d5c-ntx82          1/1     Running   0          29d
+registry-ui-6cf8bd69dc-rrkl8            1/1     Running   0          85d
+restserver01-6d7bb6d48-7q8tw            1/1     Running   0          26m
+restserver01-6d7bb6d48-8jz2d            1/1     Running   0          26m
+restserver01-6d7bb6d48-m58b5            1/1     Running   0          26m
+restserver02-9874bd9c5-fcr5t            1/1     Running   0          11s
+restserver02-9874bd9c5-j7m7p            1/1     Running   0          11s
+restserver02-9874bd9c5-vn2kx            1/1     Running   0          11s
+
+kubectl port-forward <nombre POD> 8081:8081
+```
+
+Para probar nuestro servicio podemos volver a ejecutarlo pero esta vez usando localhost ya que estamos haciendo un port-forwarding de nuestra maquina al cluster Kubernetes.
+
+```url
+http://localhost:8082/status
+```
+
+Finalizamos este laboratorio haciendo un git commit y un git push para subir todos los archivos a nuestro repositorio para poder iniciar nuestro próximo laboratorio. A continuación se listan los ejemplos para realizar esto.
+
+```sh
+git add .
+git commit -m "MENSAJE QUE QUEREMOS COLOCAR DESCRIPTIVO DE LOS CAMBIOS"
+git push origin rama <NUMERO PARTICIPANTE>
+```
 #FIN
 
 
