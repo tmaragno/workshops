@@ -103,11 +103,11 @@ Una vez culminado deberíamos tener la ejecución en verde. Esto lo que hizo fue
 
 La imágen a continuación muestra un ejemplo de como configurar el nuevo pipeline que se encargará de detener el contenedor que está corriendo. (Podemos discutir en la sesión que significa exactamente este paso)
 
-![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_18.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short03.png)
 
 Nuevamente, el paso del pipeline para detener el contenedor requiere algunas variables de entorno para poder ejecutar. Estas las definimos de la misma forma que antes, sin embargo la imagen muestra un ejemplo.
 
-![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short03.png)
+![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short06.png)
 
 Para que este pipeline se ejecute, debemos agregarlo al "Workflow" que tenemos definido. Para esto regresamos a la pestaña "Workflow" (paso 2 de la imagen anterior) y lo agregamos como se muestra en las imágenes a continuación.
 
