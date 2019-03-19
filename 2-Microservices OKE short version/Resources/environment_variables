@@ -1,0 +1,6 @@
+DOCKER_USERNAME=gse00014124/gse-admin_ww@oracle.com
+DOCKER_PASSWORD=.#gXT-9m.1H)cp90ouPC
+DOCKER_REPO=gse00014124/workshoprepo
+OKE_MASTER=https://cqtgnzqmmyd.us-phoenix-1.clusters.oci.oraclecloud.com:6443
+OKE_TOKEN=.#gXT-9m.1H)cp90ouPC
+WERCKER_OUTPUT_DIR=/wercker
