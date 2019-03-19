@@ -52,7 +52,7 @@ deploy-to-kubernetes:
         command: rollout status deployment/restserver<NUMERO PARTICIPANTE>
 
 ```
-Este archivo lo vamos a generar directamente en la raiz del proyecto. El contenido del archivo lo podemos discutir en la sesión en vivo. 
+Este archivo lo vamos a generar y luego entregar directamente a la rama maestra de su repositorio.
 
 El proximo paso es logearnos a nuestra cuenta en Wercker.com y generar una nueva aplicación. (Si no tenemos cuenta podemos abrir una)
 

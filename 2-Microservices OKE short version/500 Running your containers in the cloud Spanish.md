@@ -153,7 +153,7 @@ Finalizamos este laboratorio haciendo un git commit y un git push para subir tod
 ```sh
 git add .
 git commit -m "MENSAJE QUE QUEREMOS COLOCAR DESCRIPTIVO DE LOS CAMBIOS"
-git push origin rama <NUMERO PARTICIPANTE>
+git push origin master
 ```
 #FIN
 

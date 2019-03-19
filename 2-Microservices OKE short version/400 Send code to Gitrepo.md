@@ -15,13 +15,13 @@ vi .gitignore
 #en el archivo agregamos la siguiente linea
 node_modules
 #Agregamos el repositorio remoto en Developer Cloud Service como un repositorio remoto
-git remote add origin <URL del repositorio en developer cloud service>
+git remote add origin <URL del repositorio en developer cloud service DEL PARTICIPANTE>
 #Vamos a marcar todos los archivos en la carpeta para que sean entregados.
 git add –A
 #Se genera un conjunto de cambios con el mensaje deseado
 git commit -m "Entrega version .1 del servidor"
 #Enviamos el conjunto de cambios al repositorio en la nube.
-git push origin rama<NUMERO PARTICIPANTE>
+git push origin master
 ```
 
 ##FIN
