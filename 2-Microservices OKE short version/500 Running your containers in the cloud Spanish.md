@@ -106,11 +106,11 @@ spec:
   template:
     metadata:
       labels:
-        app: restserver
+        app: restserver<NUMERO PARTICIPANTE>
         commit: participant<NUMERO PARTICIPANTE>
     spec:
       containers:
-      - name: restserver
+      - name: restserver<NUMERO PARTICIPANTE>
         image: phx.ocir.io/gse00014124/workshoprepo:participant<NUMERO PARTICIPANTE>
         ports:
           - containerPort: 8081
