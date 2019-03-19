@@ -124,13 +124,13 @@ docker login phx.ocir.io
 
 docker tag participant<numero participante>:latest phx.ocir.io/gse00014124/workshoprepo/<numero participante>:latest
 
-docker push phx.ocir.io/gse00014124/workshoprepo:participant<numero participante>:latest
+docker push phx.ocir.io/gse00014124/workshoprepo:participant<numero participante>
 ```
 
 Para crear la app ejecutamos el siguiente comando:
 
 ```sh
-kubectl create -f .\kubernetes_deployment.yml.template
+kubectl create -f ./kubernetes_deployment.yml.template
 ```
 
 Podemos probar nuestro deployment usando la capacidad de port forwarding de kubectl, tal como se muestra en el ejemplo a continuación. En primer lugar obtenemos todos los "pods" que están corriendo en el cluster y luego realizamos el port forwarding para poder conectarnos a el.
@@ -155,7 +155,7 @@ kubectl port-forward <nombre POD> 8081:8081
 Para probar nuestro servicio podemos volver a ejecutarlo pero esta vez usando localhost ya que estamos haciendo un port-forwarding de nuestra maquina al cluster Kubernetes.
 
 ```url
-http://localhost:8082/status
+http://localhost:8081/status
 ```
 
 Finalizamos este laboratorio haciendo un git commit y un git push para subir todos los archivos a nuestro repositorio para poder iniciar nuestro próximo laboratorio. A continuación se listan los ejemplos para realizar esto.
