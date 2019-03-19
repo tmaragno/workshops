@@ -117,6 +117,16 @@ spec:
       imagePullSecrets:
       - name:  demosecret
 ```
+Luego volvemos a hacer un push al registro. Para este fin realizamos un "tageo" de la imagen de la siguiente forma:
+
+```sh
+docker login phx.ocir.io
+
+docker tag participant<numero participante>:latest phx.ocir.io/gse00014124/workshoprepo/<numero participante>:latest
+
+docker push phx.ocir.io/gse00014124/workshoprepo:participant<numero participante>:latest
+```
+
 Para crear la app ejecutamos el siguiente comando:
 
 ```sh
