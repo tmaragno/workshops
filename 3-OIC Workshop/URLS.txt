@@ -1,0 +1,2 @@
+Integration Cloud URL: https://demoservicesaoiclad-gse00015677.integration.ocp.oraclecloud.com/ic/home/
+Eloqua REST API URL: https://secure.p03.eloqua.com/api/REST/1.0/data
