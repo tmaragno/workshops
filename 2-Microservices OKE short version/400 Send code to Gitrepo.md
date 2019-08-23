@@ -3,7 +3,7 @@ En este laboratorio vamos a subir el código fuente y los DockerFiles a los repo
 - Entrega del código fuente a una rama de desarrollo
 
 # Entrega del código a una rama de desarrollo
-En primer lugar abrimos el terminal en la máquina virtual y ejecutamos los siguientes comandos en orden, uno por uno. En comentario (Texto que empieza con el symbolo #) se coloca una breve explicación de lo que hace el comando.
+En primer lugar abrimos el terminal en la maquina asignada y ejecutamos los siguientes comandos en orden, uno por uno. En comentario (Texto que empieza con el symbolo #) se coloca una breve explicación de lo que hace el comando.
 
 ![Open Terminal](https://github.com/tmaragno/workshops/blob/master/images/500_Image_1.png)
 
