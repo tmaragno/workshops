@@ -61,7 +61,7 @@ mkdir -p .kube
 ```
 En esta carpeta va a estar el archivo de configuración que creamos con el siguiente comando. Asegurense de utilizar las llaves que serán suministradas por el instructor.
 ```sh
-oci setup config.
+oci setup config
 ```
 Los datos solicitados los pueden encontrar en el archivo parameters.md en la carpeta Resources.
 
