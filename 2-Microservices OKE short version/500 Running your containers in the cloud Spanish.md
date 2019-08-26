@@ -66,7 +66,7 @@ oci setup config.
 Los datos solicitados los pueden encontrar en el archivo parameters.md en la carpeta Resources.
 
 ```sh
-oci ce cluster create-kubeconfig --cluster-id ocid1.cluster.oc1.phx.aaaaaaaaafqtimdfg5sdkzjymyzwmmzyge4taytcga4gcmjxhcqtgnzqmmyd --file $HOME/.kube/config --region us-phoenix-1 
+oci ce cluster create-kubeconfig --cluster-id <cluster_id> --file $HOME/.kube/config --region <region_code> 
 ```
 
 Finalmente tenemos que expotar la variable de entorno que indicará la ruta en donde se encuentra el archivo de configuración generado.
