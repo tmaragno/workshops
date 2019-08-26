@@ -85,7 +85,7 @@ NAME              STATUS   ROLES   AGE   VERSION
 129.146.61.156    Ready    node    94d   v1.11.1
 129.146.70.125    Ready    node    94d   v1.11.1
 ```
-Para poder crear contenedores basados vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster.
+Para poder crear contenedores basados vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante.
 
 ```yaml
 # This template file will have its environment variables expanded
@@ -120,11 +120,11 @@ spec:
 Luego volvemos a hacer un push al registro. Para este fin realizamos un "tageo" de la imagen de la siguiente forma:
 
 ```sh
-docker login phx.ocir.io
+docker login iad.ocir.io
 
-docker tag participant<numero participante>:latest phx.ocir.io/gse00014124/workshoprepo/<numero participante>:latest
+docker tag participant<numero participante>:latest iad.ocir.io/nvidal/workshoprepo/<numero participante>:latest
 
-docker push phx.ocir.io/gse00014124/workshoprepo:participant<numero participante>
+docker push iad.ocir.io/nvidal/workshoprepo:participant<numero participante>
 ```
 
 Para crear la app ejecutamos el siguiente comando:
