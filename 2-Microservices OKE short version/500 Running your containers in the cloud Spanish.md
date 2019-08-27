@@ -117,7 +117,7 @@ spec:
     spec:
       containers:
       - name: restserver<NUMERO PARTICIPANTE>
-        image: phx.ocir.io/gse00014124/workshoprepo:participant<NUMERO PARTICIPANTE>
+        image: iad.ocir.io/nvidal/workshoprepo:participant<NUMERO PARTICIPANTE>
         ports:
           - containerPort: 8081
       imagePullSecrets:
