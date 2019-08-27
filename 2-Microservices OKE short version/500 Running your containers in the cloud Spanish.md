@@ -131,9 +131,9 @@ NOTA: el username tiene el siguiente formato: nvidal/oracleidentitycloudservice/
 ```sh
 docker login iad.ocir.io
 
-docker tag participant<numero participante>/node-server:latest iad.ocir.io/nvidal/workshoprepo/<numero participante>:latest
+docker tag participant<numero participante>/node-server:latest iad.ocir.io/nvidal/workshoprepo:<numero de participante>
 
-docker push iad.ocir.io/nvidal/workshoprepo:participant<numero participante>
+docker push iad.ocir.io/nvidal/workshoprepo:<numero de participante>
 ```
 
 Para crear la app ejecutamos el siguiente comando:
