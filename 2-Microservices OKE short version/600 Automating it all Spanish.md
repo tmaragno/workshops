@@ -65,7 +65,7 @@ La nueva aplicación estará amarrada a nuestro repositorio creado en Developer 
 
 El URL del ambiente se le compartirá en la sesión. Un ejemplo del ambiente está a continuación:
 ```URL
-https://devcsinstance-<IDDOMAIN>.uscom-central-1.oraclecloud.com/devcsinstance-<IDDOMAIN>
+https://alticedevcs-nvidal.developer.ocp.oraclecloud.com/alticedevcs-nvidal
 ```
 Seleccionamos el repositorio desado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
