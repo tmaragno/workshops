@@ -63,7 +63,16 @@ En esta carpeta va a estar el archivo de configuración que creamos con el sigui
 ```sh
 oci setup config
 ```
-Los datos solicitados los pueden encontrar en el archivo parameters.md en la carpeta Resources.
+Los datos solicitados los pueden encontrar en el archivo parameters.md en la carpeta Resources. Una vez creada la configuración tenemos que subir la llave publica a nuestra cuenta de Oracle Cloud. Abrir la pantalla de resumen de su usuario en Oracle Cloud. Abrir la opción API Keys y luego importar la llave. Primero que nada mostramos la llave publica usando 
+
+```sh 
+cd $HOME
+cd ./oci
+cat oci_api_key_public.pem
+```
+Copiar la llave y importarla en la consola.
+
+
 
 ```sh
 oci ce cluster create-kubeconfig --cluster-id <cluster_id> --file $HOME/.kube/config --region <region_code> 
@@ -85,7 +94,7 @@ NAME              STATUS   ROLES   AGE   VERSION
 129.146.61.156    Ready    node    94d   v1.11.1
 129.146.70.125    Ready    node    94d   v1.11.1
 ```
-Para poder crear contenedores basados vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante.
+Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta RESTServer y le ponemos el nombre kubernetes_deployment.yml.template
 
 ```yaml
 # This template file will have its environment variables expanded
