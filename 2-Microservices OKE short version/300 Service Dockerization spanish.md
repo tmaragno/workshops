@@ -59,7 +59,7 @@ npm-debug.log
 ```
 El proximo paso es crear la imagen. Esto lo realizamos de la siguiente forma. Recuerden reemplazar <username> con su nombre de usuario en Docker Hub. No se olviden del punto al final.
 ```shell
-sudo docker build -t <your username>/node-server .
+sudo docker build -t participant<NUMERO PARTICIPANTE>/node-server .
 ```
 Si listamos las imagenes locales que tenemos deberíamos ver la que acabamos de crear. Podemos listar las imagenes locales uando el siguiente comando.
 ```shell
