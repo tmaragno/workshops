@@ -125,6 +125,9 @@ spec:
 ```
 Luego volvemos a hacer un push al registro. Para este fin realizamos un "tageo" de la imagen de la siguiente forma:
 
+NOTA: el username tiene el siguiente formato: nvidal/oracleidentitycloudservice/<usuario><br>
+  El password es el authtoken generado anteriormente.
+
 ```sh
 docker login iad.ocir.io
 
