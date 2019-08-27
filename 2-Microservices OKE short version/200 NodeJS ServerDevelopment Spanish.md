@@ -76,7 +76,7 @@ npm i
 
 node server.js 
 ```
-Ahora prombamos si todo funciona. Por favor abra un explorador (Firefox por ejemplo) y pruebe abriendo la siguiente dirección: http://localhost:8081/status<br/>
+Ahora prombamos si todo funciona. Por favor abra un explorador (Firefox por ejemplo) y pruebe abriendo la siguiente dirección: http://<ip address asignada>:8081/status<br/> NOTA: Reemplazar el texto entre <> por la dirección de su VM asignada.
 El resultado debería ser el siguiente:
 ```json
 {"status": {"message": "Hi! All working here!"}}
