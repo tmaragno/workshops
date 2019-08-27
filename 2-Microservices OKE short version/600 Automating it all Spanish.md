@@ -54,6 +54,11 @@ deploy-to-kubernetes:
 ```
 Este archivo lo vamos a generar y luego entregar directamente a la rama maestra de su repositorio.
 
+```
+git add wercker.yml
+git commit -m 'Creacion de archivo wercker.yml'
+git push origin master
+
 El proximo paso es logearnos a nuestra cuenta en Wercker.com y generar una nueva aplicación. (Si no tenemos cuenta podemos abrir una)
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_3.png)
@@ -152,7 +157,7 @@ Finalmente debemos entregar los cambios al repositorio como hemos hecho antes. A
 ```sh
 git add server.js
 git commit -m 'Cambios realizados al servidor para laboratorio.'
-git push origin <RAMA PARTICIPANTE>
+git push origin master
 ```
 En el momento que se realiza el commit, podemos ver que se dispara una nueva corrida en wercker. Una vez terminada esta corrida, si vamos a la consola de Oracle Container Cloud Service, podemos observar como se detiene el contenedor y después de un momento inicia la creación nuevamente del mismo. Las imágenes a continuación ilustran un ejemplo basado en mi corrida.
 
