@@ -123,6 +123,23 @@ spec:
       imagePullSecrets:
       - name:  demosecret
 ```
+Debemos crear un segundo archivo llamado kubernetes_service_manifest.yml
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: restserver<NUMERO PARTICIPANTE>-service
+  labels:
+    app: restserver<NUMERO PARTICIPANTE>
+  annotations:
+    service.beta.kubernetes.io/oci-load-balancer-shape: 100Mbps
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8081
+  selector:
+    app: restserver<NUMERO PARTICIPANTE>
+```
 Luego volvemos a hacer un push al registro. Para este fin realizamos un "tageo" de la imagen de la siguiente forma:
 
 NOTA: el username tiene el siguiente formato: nvidal/oracleidentitycloudservice/SU NOMBRE DE USUARIO<br>
@@ -140,6 +157,7 @@ Para crear la app ejecutamos el siguiente comando:
 
 ```sh
 kubectl create -f ./kubernetes_deployment.yml.template
+kubectl apply -f ./kubernetes_service_manifest.yml
 ```
 
 Podemos probar nuestro deployment usando la capacidad de port forwarding de kubectl, tal como se muestra en el ejemplo a continuación. En primer lugar obtenemos todos los "pods" que están corriendo en el cluster y luego realizamos el port forwarding para poder conectarnos a el.
