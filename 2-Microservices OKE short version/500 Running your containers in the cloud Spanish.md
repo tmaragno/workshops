@@ -97,10 +97,7 @@ NAME              STATUS   ROLES   AGE   VERSION
 Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta RESTServer y le ponemos el nombre kubernetes_deployment.yml.template
 
 ```yaml
-# This template file will have its environment variables expanded
-# and the .template extension removed by the bash-template Wercker step.
-# See wercker.yml.
- 
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
