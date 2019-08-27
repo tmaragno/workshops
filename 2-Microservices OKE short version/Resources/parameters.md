@@ -1,4 +1,4 @@
-#Pasos al ejecutar oci setup config:
+# Pasos al ejecutar oci setup config:
 ```sh
 Enter a location for your config [/home/holuser/.oci/config]: 
 Enter a user OCID: <el ocid de su usuario. El instructor le enseña como encontrarlo>
@@ -11,6 +11,6 @@ Enter a passphrase for your private key (empty for no passphrase):
 
 ```
 
-#Parametros adicionales:
+# Parametros adicionales:
 clusterocid: ocid1.cluster.oc1.iad.aaaaaaaaafqtsytemuywgmrrgy3gcm3gmzsdcnbvgzqwem3ghcytgnjsgbsd
 
