@@ -1,0 +1,2 @@
+Crear secret
+kubectl create secret docker-registry demosecret --docker-server=iad.ocir.io --docker-username='nvidal/oracleidentitycloudservice/<SU USUARIO DE OCI>' --docker-password='<SU AUTH TOKEN' --docker-email='<SU EMAIL>'
