@@ -59,27 +59,27 @@ npm-debug.log
 ```
 El proximo paso es crear la imagen. Esto lo realizamos de la siguiente forma. Recuerden reemplazar <username> con su nombre de usuario en Docker Hub. No se olviden del punto al final.
 ```shell
-docker build -t <your username>/node-server .
+sudo docker build -t <your username>/node-server .
 ```
 Si listamos las imagenes locales que tenemos deberíamos ver la que acabamos de crear. Podemos listar las imagenes locales uando el siguiente comando.
 ```shell
-docker images
+sudo docker images
 
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
 <your username>/node-server     latest              ebb132c36bc6        24 seconds ago      678MB
 ```
 El proximo paso es correr un contenedor desde esa imagen. Esto lo hacemos de la siguiente forma:
 ```shell
-docker run -p 8081:8081 -d --name server <your username>/node-server
+sudo docker run -p 8081:8081 -d --name server <your username>/node-server
 ```
 La columna *STATUS* nos dice si está corriendo o no. <br/>
 Podemos ver si está corriendo ejecutando el comando:
 ```shell
-docker ps
+sudo docker ps
 ```
 y si queremos ver el log del servicio, podemos ejecutar:
 ```shell
-docker logs <container id>
+sudo docker logs <container id>
 ```
 donde container id lo sacan del comando anterior. Si todo está arriba podemos probar nuevamente desde el browser y verificar que el servicio responde.
 
