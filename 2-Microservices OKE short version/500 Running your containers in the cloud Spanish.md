@@ -139,8 +139,6 @@ docker push iad.ocir.io/nvidal/workshoprepo:participant<numero de participante>
 Para crear la app ejecutamos el siguiente comando:
 
 ```sh
-kubectl create secret docker-registry demosecret --docker-server=iad.ocir.io --docker-username='nvidal/oracleidentitycloudservice/<SU USUARIO DE OCI>' --docker-password='<SU AUTH TOKEN' --docker-email='<SU EMAIL>'
-
 kubectl create -f ./kubernetes_deployment.yml.template
 ```
 
