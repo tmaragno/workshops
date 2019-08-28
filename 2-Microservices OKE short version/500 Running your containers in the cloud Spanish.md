@@ -72,7 +72,7 @@ cat oci_api_key_public.pem
 ```
 Copiar la llave y importarla en la consola. Para importar la llave abra la página de su usuario en OCI y siga presione los botones como se muestra en la imagen a continuación.
 
-![OCIUser]("https://github.com/tmaragno/workshops/blob/master/images/API Key.png")
+![APIKey](https://github.com/tmaragno/workshops/blob/master/images/APIKey.png)
 
 
 ```sh
@@ -142,6 +142,12 @@ spec:
     app: restserver<NUMERO PARTICIPANTE>
 ```
 Luego volvemos a hacer un push al registro. Para este fin realizamos un "tageo" de la imagen de la siguiente forma:
+
+## Generar AuthToken en OCI.
+Para poder autenticarnos desde la línea de comandos necesitamos un token de seguridad que se genera en la consola de OCI. De la misma forma que se generó el API Key, volvemos a la página de su usuario en OCI y creamos el auth token como se muestra en la imagen a continuación.
+NOTA IMPORTANTE: Deben guardar el authtoken en un archivo de notepad ya que una vez cerrada la ventana emergente no se podrá ver mas.
+
+![APIKey](https://github.com/tmaragno/workshops/blob/master/images/Authtoken.png)
 
 NOTA: el username tiene el siguiente formato: nvidal/oracleidentitycloudservice/SU NOMBRE DE USUARIO<br>
   El password es el authtoken generado anteriormente.
