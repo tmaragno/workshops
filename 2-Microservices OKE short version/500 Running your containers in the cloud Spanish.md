@@ -1,7 +1,7 @@
 # Entorno de Ejecución
 En nuestro ejemplo tenemos una simplificación en donde únicamente corremos 1 contenedor. Esto no es un caso real. Cargas empresariales van a contar con cientos de contenedores corriendo en simultáneo, lo cuál aumenta la complejidad de administración. Para simplificar esto, Oracle crea su infraestructura para gestionar y correr contenedores Docker llamada Oracle Container Engine for Kubernetes.
 
-Oracle Container Engine for Kubernetes ofrece a los equipos de Desarrollo y Operaciones los beneficios de una "contenedorización" Docker fácil y segura al crear y desplegar aplicaciones.<br>/
+Oracle Container Engine for Kubernetes ofrece a los equipos de Desarrollo y Operaciones los beneficios de una "contenedorización" Docker fácil y segura al crear y desplegar aplicaciones.</br>
 
 Oracle Container Engine for Kubernetes:
 
@@ -71,6 +71,8 @@ cd ./oci
 cat oci_api_key_public.pem
 ```
 Copiar la llave y importarla en la consola. Para importar la llave abra la página de su usuario en OCI y siga presione los botones como se muestra en la imagen a continuación.
+
+![OCIUser](https://github.com/tmaragno/workshops/blob/master/images/API Key.png.png)
 
 
 ```sh
