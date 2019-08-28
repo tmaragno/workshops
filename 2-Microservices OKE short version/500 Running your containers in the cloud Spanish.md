@@ -72,7 +72,7 @@ cat oci_api_key_public.pem
 ```
 Copiar la llave y importarla en la consola. Para importar la llave abra la página de su usuario en OCI y siga presione los botones como se muestra en la imagen a continuación.
 
-![OCIUser]('https://github.com/tmaragno/workshops/blob/master/images/API Key.png')
+![OCIUser]("https://github.com/tmaragno/workshops/blob/master/images/API Key.png")
 
 
 ```sh
