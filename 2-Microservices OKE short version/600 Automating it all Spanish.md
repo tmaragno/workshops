@@ -54,7 +54,7 @@ deploy-to-kubernetes:
 
 ```
 
-Este archivo lo vamos a generar y luego entregar directamente a la rama maestra de su repositorio.
+Este archivo lo vamos a generar y luego entregar directamente a la rama *RESTServer* de su repositorio.
 
 ```
 git add wercker.yml
