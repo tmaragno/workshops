@@ -60,7 +60,7 @@ npm-debug.log
 ```
 Guarde y cierre el archivo (*esc*, luego *:wq* y *enter)*.
  
-El próximo paso es crear la imagen. Esto lo realizamos de la siguiente forma. Recuerden reemplazar <username> con su nombre de usuario en Docker Hub. No se olviden del punto al final.
+El próximo paso es crear la imagen. Esto lo realizamos de la siguiente forma. Recuerden reemplazar *<username>* con su nombre de usuario de Docker Hub. No se olviden del punto al final.
 ```shell
 sudo docker build -t participant<NUMERO PARTICIPANTE>/node-server .
 ```
