@@ -68,7 +68,7 @@ En esta carpeta va a estar el archivo de configuración que creamos con el sigui
 ```sh
 oci setup config
 ```
-Los datos solicitados los pueden encontrar en el archivo parameters.md en la carpeta Resources. Una vez creada la configuración tenemos que subir la llave publica a nuestra cuenta de Oracle Cloud. Abrir la pantalla de resumen de su usuario en Oracle Cloud. Abrir la opción API Keys y luego importar la llave. Primero que nada mostramos la llave publica usando 
+Los datos solicitados los pueden encontrar en el archivo *parameters.md* en la carpeta Resources. Una vez creada la configuración tenemos que subir la llave publica a nuestra cuenta de Oracle Cloud. Abrir la pantalla de resumen de su usuario en Oracle Cloud. Abrir la opción API Keys y luego importar la llave. Primero que nada mostramos la llave publica usando 
 
 ```sh 
 cd $HOME
@@ -90,7 +90,7 @@ Finalmente tenemos que expotar la variable de entorno que indicará la ruta en d
 export KUBECONFIG=$HOME/.kube/config
 ```
 
-Para verificar el correcto funcionamiento de lo que hicimos anteriormente ejecutamos el siguiente comando que nos mostrará los nodos qué estan corriendo en el Oracle Cloud.
+Para verificar el funcionamiento correcto de lo que hicimos anteriormente ejecutamos el siguiente comando que nos mostrará los nodos qué estan corriendo en el Oracle Cloud.
 
 ```sh
 kubectl get nodes
@@ -100,7 +100,7 @@ NAME              STATUS   ROLES   AGE   VERSION
 129.146.61.156    Ready    node    94d   v1.11.1
 129.146.70.125    Ready    node    94d   v1.11.1
 ```
-Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta RESTServer y le ponemos el nombre kubernetes_deployment.yml.template
+Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta *RESTServer* y le ponemos el nombre kubernetes_deployment.yml.template
 
 ```yaml
 
@@ -129,7 +129,7 @@ spec:
       imagePullSecrets:
       - name:  demosecret
 ```
-Debemos crear un segundo archivo llamado kubernetes_service_manifest.yml
+Debemos crear un segundo archivo en *RESTServer* llamado kubernetes_service_manifest.yml
 ```yaml
 apiVersion: v1
 kind: Service
