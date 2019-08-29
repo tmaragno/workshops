@@ -2,7 +2,8 @@
 El objetivo de este último laboratorio es mostrar como podemos automatizar el ciclo de vida completo del desarrollo, sin tener que pasar por tareas manuales como hemos estado haciendo con anterioridad. La idea detrás de esto es que desde un commit a la rama maestra de nuestro proyecto, se genere una nueva imagen que contiene el código fuente modificado, se realicen las pruebas unitarias(No parte de esta serie de laboratorios) y finalmente se haga el deployment en un entorno de ejecución para contenedores como lo es Oracle Container Cloud Service.
 
 ## Creación del archivo requerido para la orquestación
-El archivo que van a crear debe encontrarse en la carpeta RESTServer del repositorio y se debe llamar "wercker.yml". A continutación tienen el código del archivo:
+El archivo que van a crear debe encontrarse en la carpeta *RESTServer* del repositorio y se debe llamar "wercker.yml". A continuación tienen el código del archivo:
+
 ```yaml
 box: python:2.7
 build:
@@ -52,6 +53,7 @@ deploy-to-kubernetes:
         command: rollout status deployment/restserver<NUMERO PARTICIPANTE>
 
 ```
+
 Este archivo lo vamos a generar y luego entregar directamente a la rama maestra de su repositorio.
 
 ```
@@ -72,6 +74,7 @@ El URL del ambiente se le compartirá en la sesión. Un ejemplo del ambiente est
 ```URL
 https://alticedevcs-nvidal.developer.ocp.oraclecloud.com/alticedevcs-nvidal
 ```
+
 Seleccionamos el repositorio deseado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
 
@@ -82,7 +85,7 @@ Llenamos los datos de repo y usuario que se compartieron durante el workshop.
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_7.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_8.png)
 
-Una vez que estamos en la página principal de nuestra aplicación, podemos elegir si queremos que Wercker nos guie en la generación del archivo .YML dependiendo del lenguaje de programación que tengamos. Sin embargo como esto ya lo hicimos arriba, vamos a decirle que queremos ejecutar un build con un wercker.yml existente.
+Una vez que estamos en la página principal de nuestra aplicación, podemos elegir si queremos que Wercker nos guie en la generación del archivo ".yml" dependiendo del lenguaje de programación que tengamos. Sin embargo como esto ya lo hicimos arriba, vamos a decirle que queremos ejecutar un build con un "wercker.yml" existente.
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_9.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_10.png)
@@ -120,10 +123,13 @@ Para que este pipeline se ejecute, debemos agregarlo al "Workflow" que tenemos d
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short04.png)
 
 Ahora para la gran final! Vamos a realizar un cambio al código del servidor REST. El extracto a continuación tiene los comandos que se deben ejecutar uno a uno.
+
 ```sh
 vi server.js
 ```
+
 Los cambios del archivo se muestran abajo. Vamos a agregar nuestro nombre en el status:
+
 ```JS
 var express = require('express');
 var app = express();
@@ -153,13 +159,16 @@ server = app.listen(PORT, function () {
 })
 
 ```
+
 Finalmente debemos entregar los cambios al repositorio como hemos hecho antes. A continuación el extracto con los comandos a ejecutar uno a uno.
+
 ```sh
 git add server.js
 git commit -m 'Cambios realizados al servidor para laboratorio.'
 git push origin master
 ```
-En el momento que se realiza el commit, podemos ver que se dispara una nueva corrida en wercker. Una vez terminada esta corrida, si vamos a la consola de Oracle Container Cloud Service, podemos observar como se detiene el contenedor y después de un momento inicia la creación nuevamente del mismo. Las imágenes a continuación ilustran un ejemplo basado en mi corrida.
+
+En el momento que se realiza el commit, podemos ver que se dispara una nueva corrida en Wercker. Una vez terminada esta corrida, si vamos a la consola de Oracle Container Cloud Service, podemos observar como se detiene el contenedor y después de un momento inicia la creación nuevamente del mismo. Las imágenes a continuación ilustran un ejemplo basado en mi corrida.
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short05.png)
 
