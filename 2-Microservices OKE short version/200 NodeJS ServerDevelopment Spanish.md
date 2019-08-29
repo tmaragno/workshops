@@ -2,7 +2,7 @@
 A continuación se proporcionan los pasos a seguir para ilustrar la funcionalidad de Docker y como se puede emplear para construir una aplicación levemente acoplada siguiendo un patrón de diseño de microservicios. En primer lugar y objetivo de esta guia será el desarrollo de un servidor de servicios web REST que retorna el resultado de una operación matemática muy compleja. ;)
 
 ## Desarrollar el servidor NodeJS
-Para empezar volvemos a nuestra maquina virtual.
+Para empezar volvemos a nuestra maquina virtual en la nube.
 <br/>
 En caso de no estar instalado, instale NodeJS usando los siguiente comando
 ```sh
