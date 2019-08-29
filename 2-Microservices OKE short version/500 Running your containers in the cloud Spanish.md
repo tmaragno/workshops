@@ -18,7 +18,9 @@ Asegurese de estar en la carpeta *RESTServer*. Si lo esta, ejecute el siguiente 
 ```sh
 sudo vi /etc/yum.repos.d/kubernetes.repo
 ```
+
 El archivo debe verse como a continuación:
+
 ```sh
 [kubernetes]
 name=Kubernetes
@@ -32,11 +34,13 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 Guarde y cierre el archivo.
 
 Para instalar las herramientas de Kubernetes ejecutar el siguiente comando:
+
 ```sh
 sudo yum install -y kubelet kubeadm kubectl
 ```
 
 Para probar que la instalación fue exitosa vamos a ejecutar el siguiente comando. Igualmente les coloco un ejemplo de un resultado esperado.
+
 ```sh
 kubectl version
 
@@ -54,20 +58,25 @@ sudo yum install -y python36
 
 bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
 ```
+
 Usar los valores por defecto para la instalación y esperar que termine.
 
 Ahora vamos a inicializar y configurar las herramientas de línea de comandos para OCI.
 
 ##Conectarnos al Cluster creado
 Primero vamos a crear una carpeta en donde configuramos todo los relacionado a nuestro cluster Kubernetes. 
+
 ```sh
 cd $HOME
 mkdir -p .kube
 ```
+
 En esta carpeta va a estar el archivo de configuración que creamos con el siguiente comando. Asegurense de utilizar las llaves que serán suministradas por el instructor.
+
 ```sh
 oci setup config
 ```
+
 Los datos solicitados los pueden encontrar en el archivo *parameters.md* en la carpeta Resources. Una vez creada la configuración tenemos que subir la llave publica a nuestra cuenta de Oracle Cloud. Abrir la pantalla de resumen de su usuario en Oracle Cloud. Abrir la opción API Keys y luego importar la llave. Primero que nada mostramos la llave publica usando 
 
 ```sh 
@@ -75,10 +84,10 @@ cd $HOME
 cd ./oci
 cat oci_api_key_public.pem
 ```
+
 Copiar la llave y importarla en la consola. Para importar la llave abra la página de su usuario en OCI y siga presione los botones como se muestra en la imagen a continuación.
 
 ![APIKey](https://github.com/tmaragno/workshops/blob/master/images/APIKey.png)
-
 
 ```sh
 oci ce cluster create-kubeconfig --cluster-id <cluster_id> --file $HOME/.kube/config --region <region_code> 
@@ -100,6 +109,7 @@ NAME              STATUS   ROLES   AGE   VERSION
 129.146.61.156    Ready    node    94d   v1.11.1
 129.146.70.125    Ready    node    94d   v1.11.1
 ```
+
 Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta *RESTServer* y le ponemos el nombre "kubernetes_deployment.yml.template"
 
 ```yaml
@@ -129,7 +139,9 @@ spec:
       imagePullSecrets:
       - name:  demosecret
 ```
+
 Debemos crear un segundo archivo en la carpeta *RESTServer* llamado "kubernetes_service_manifest.yml"
+
 ```yaml
 apiVersion: v1
 kind: Service
@@ -146,7 +158,6 @@ spec:
   selector:
     app: restserver<NUMERO PARTICIPANTE>
 ```
-
 
 ## Generar AuthToken en OCI.
 Para poder autenticarnos desde la línea de comandos necesitamos un token de seguridad que se genera en la consola de OCI. De la misma forma que se generó el API Key, volvemos a la página de su usuario en OCI y creamos el auth token como se muestra en la imagen a continuación.
@@ -206,6 +217,7 @@ git add .
 git commit -m "MENSAJE QUE QUEREMOS COLOCAR DESCRIPTIVO DE LOS CAMBIOS"
 git push origin master
 ```
+
 #FIN
 
 
