@@ -72,7 +72,7 @@ El URL del ambiente se le compartirá en la sesión. Un ejemplo del ambiente est
 ```URL
 https://alticedevcs-nvidal.developer.ocp.oraclecloud.com/alticedevcs-nvidal
 ```
-Seleccionamos el repositorio desado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
+Seleccionamos el repositorio deseado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
 
 
@@ -96,7 +96,7 @@ La imágen a continuación lista las variables de entorno que debemos configurar
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short02.png)
 
-Luego de configurados las variables con nuestros datos volvemos a ejecutar el workflow.
+Luego de configurado las variables con nuestros datos volvemos a ejecutar el workflow.
 
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_14.png)
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/700_Image_15.png)
