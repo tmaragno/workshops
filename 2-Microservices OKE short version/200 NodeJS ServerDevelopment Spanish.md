@@ -68,7 +68,7 @@ server = app.listen(PORT, function () {
 
 })
 ```
-Para cerrar y guardar el archivo, presione *esc* seguido por la combinación de teclas *:* luego *w* luego *q* (:wq) y finalizar presionando *enter*
+Para cerrar y guardar el archivo, presione *esc* seguido por la combinación de teclas *:* luego *w* y luego *q* ( :wq ) y finalizar presionando *enter*
 
 El siguiente paso es ejecutar el servidor y verificar que esté funcionando. 
 ```sh
@@ -76,14 +76,14 @@ npm i
 
 node server.js 
 ```
-Ahora prombamos si todo funciona. Por favor abra un explorador (Firefox por ejemplo) y pruebe abriendo la siguiente dirección: http://<ip address asignada>:8081/status<br/> NOTA: Reemplazar el texto entre <> por la dirección de su VM asignada.
+Ahora probamos si todo funciona. Por favor abra un navegador de su preferencia (Firefox por ejemplo) y pruebe abriendo la siguiente dirección: http://<ip address asignada>:8081/status<br/> NOTA: Reemplazar el texto entre <> por la dirección de su VM asignada.
 El resultado debería ser el siguiente:
 ```json
 {"status": {"message": "Hi! All working here!"}}
 ```
 Finalmente vamos a crear un segundo método GET que nos permita sumar dos números. De allí ustedes pueden agregarle el código que quieran - si así lo desean.  
   
-Después del cierre del paréntesis del método `app.get('/status', function (req, res) {` inserte el siguiente snippet de código:
+Después del cierre del paréntesis del método `app.get('/status', function (req, res) {` inserte el siguiente "snippet" de código:
 
 ```javascript
 app.get('/sum', function (req, res) {
