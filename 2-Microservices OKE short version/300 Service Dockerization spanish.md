@@ -2,7 +2,7 @@
 A continuación vamos a generar una imagen Docker para cada uno de los servicios que hicimos anteriormente. De esta forma podemos iniciar rápidamente contenedores basados en estas imágenes. 
 
 ## Dockerizando el servidor NodeJS
-En primer lugar tenemos que crear un archivo denominado *Dockerfile* en la carpeta del servidor nodejs
+En primer lugar tenemos que crear un archivo denominado *Dockerfile* en la carpeta del servidor nodejs (RESTServer?)
 ```shell
 vi Dockerfile
 ```
@@ -47,7 +47,7 @@ COPY . .
 EXPOSE 8081
 CMD [ "npm", "start" ]
 ```
-Terminamos nuevamente guardando el archivo y cerrando el editor *vi* con la combinación de teclas : w q <enter>
+Terminamos nuevamente guardando el archivo y cerrando el editor *vi* presionando *esc* seguido dela combinación de teclas *:wq* y <enter>.
 Como no queremos que copie las dependecias locales y solo el código fuente, vamos a crear un archivo *.dockerignore* que va a permitir que se ignoren ciertas partes de la estructura del directorio.
 ```shell
 vi .dockerignore
@@ -57,7 +57,9 @@ En este archivo colocamos lo siguiente:
 node_modules
 npm-debug.log
 ```
-El proximo paso es crear la imagen. Esto lo realizamos de la siguiente forma. Recuerden reemplazar <username> con su nombre de usuario en Docker Hub. No se olviden del punto al final.
+Guarde y cierre el archivo.
+ 
+El próximo paso es crear la imagen. Esto lo realizamos de la siguiente forma. Recuerden reemplazar <username> con su nombre de usuario en Docker Hub. No se olviden del punto al final.
 ```shell
 sudo docker build -t participant<NUMERO PARTICIPANTE>/node-server .
 ```
@@ -68,7 +70,7 @@ sudo docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
 <your username>/node-server     latest              ebb132c36bc6        24 seconds ago      678MB
 ```
-El proximo paso es correr un contenedor desde esa imagen. Esto lo hacemos de la siguiente forma:
+Se procede a correr un contenedor desde esa imagen. Esto lo hacemos de la siguiente forma:
 ```shell
 sudo docker run -p 8081:8081 -d --name server <your username>/node-server
 ```
