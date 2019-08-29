@@ -43,7 +43,7 @@ Para poder editar el archivo hay que entrar en modo de editar (presione *i* ), l
 ```
 Para cerrar y guardar el archivo presionar las siguientes teclas en orden, *:* luego *w*  y luego *q* (*:wq*) finalizando con *enter*
 
-Repetir el procedimiento anterior para crear un archivo denominado *server.js*
+Repetir el procedimiento anterior para crear un archivo denominado *server.js* en la carpeta *RESTServer*:
 ```sh
 vi server.js
 ```
