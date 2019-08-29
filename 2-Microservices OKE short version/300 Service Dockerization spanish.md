@@ -1,5 +1,5 @@
 # Dockerizar los servicios creados
-A continuación vamos a generar una imagen Docker para cada uno de los servicios que hicimos anteriormente. De esta forma podemos iniciar rápidamente contenedores basados en estas imágenes. Sino tienen cuenta en *Docker Hub*, es bueno que la vayan creando ya que la necesitan para los siguientes pasos. 
+A continuación vamos a generar una imagen Docker para cada uno de los servicios que hicimos anteriormente. De esta forma podemos iniciar rápidamente contenedores basados en estas imágenes. Sino tienen cuenta en *Docker Hub*, es bueno que la vayan creando ya que la van a necesitar para los siguientes pasos. 
 
 ## Dockerizando el servidor NodeJS
 En primer lugar tenemos que crear un archivo denominado *Dockerfile* en la carpeta del servidor nodejs (RESTServer).
