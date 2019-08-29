@@ -13,7 +13,7 @@ Oracle Container Engine for Kubernetes:
 
 ## Instalar la línea de comandos de Oracle Compute Infrastructure y Kubectl
 
-Asegurese de estar en la carpeta *RESTService*. Si lo esta, ejecute el siguiente comando:
+Asegurese de estar en la carpeta *RESTServer*. Si lo esta, ejecute el siguiente comando:
 
 ```sh
 sudo vi /etc/yum.repos.d/kubernetes.repo
