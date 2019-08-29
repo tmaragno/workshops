@@ -76,6 +76,7 @@ https://alticedevcs-nvidal.developer.ocp.oraclecloud.com/alticedevcs-nvidal
 ```
 
 Seleccionamos el repositorio deseado y seguimos los pasos hasta el final como se muestra en las imágenes a continuación.
+
 ![Container](https://github.com/tmaragno/workshops/blob/master/images/images_short/600short01.png)
 
 
