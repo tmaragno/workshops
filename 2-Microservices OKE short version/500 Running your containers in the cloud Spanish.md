@@ -100,7 +100,7 @@ NAME              STATUS   ROLES   AGE   VERSION
 129.146.61.156    Ready    node    94d   v1.11.1
 129.146.70.125    Ready    node    94d   v1.11.1
 ```
-Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta *RESTServer* y le ponemos el nombre kubernetes_deployment.yml.template
+Para poder crear contenedores en el cluster vamos a crear un template donde definimos los parámetros para el servicio que vamos a desplegar en el cluster Kubernetes. A continuación coloco el template que les permitirá desplegar el servicio en el cluster. IMPORTANTE: Cambiar <Numero Participante> por su numero de participante. Este archivo lo vamos a crear nuevamente dentro de la carpeta *RESTServer* y le ponemos el nombre "kubernetes_deployment.yml.template"
 
 ```yaml
 
@@ -129,7 +129,7 @@ spec:
       imagePullSecrets:
       - name:  demosecret
 ```
-Debemos crear un segundo archivo en *RESTServer* llamado kubernetes_service_manifest.yml
+Debemos crear un segundo archivo en la carpeta *RESTServer* llamado "kubernetes_service_manifest.yml"
 ```yaml
 apiVersion: v1
 kind: Service
