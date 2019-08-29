@@ -29,6 +29,8 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 ```
 
+Guarde y cierre el archivo.
+
 Para instalar las herramientas de Kubernetes ejecutar el siguiente comando:
 ```sh
 sudo yum install -y kubelet kubeadm kubectl
