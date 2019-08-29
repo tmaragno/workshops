@@ -12,6 +12,9 @@ Oracle Container Engine for Kubernetes:
 -Permite a los desarrolladores enfocarse en la construcción de imágenes de aplicaciones en contenedores y en los flujos de Integración Continua / Entrega Continua (CI / CD), no en el aprendizaje de tecnologías complejas de orquestación
 
 ## Instalar la línea de comandos de Oracle Compute Infrastructure y Kubectl
+
+Asegurese de estar en la carpeta *RESTService*. Si lo esta, ejecute el siguiente comando:
+
 ```sh
 sudo vi /etc/yum.repos.d/kubernetes.repo
 ```
