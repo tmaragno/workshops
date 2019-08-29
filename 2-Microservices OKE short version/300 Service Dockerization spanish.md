@@ -47,7 +47,8 @@ COPY . .
 EXPOSE 8081
 CMD [ "npm", "start" ]
 ```
-Terminamos nuevamente guardando el archivo y cerrando el editor *vi* presionando *esc* seguido dela combinación de teclas *:wq* y <enter>.
+Terminamos nuevamente guardando el archivo y cerrando el editor *vi* presionando *esc* seguido dela combinación de teclas *:wq* y <enter>
+ 
 Como no queremos que copie las dependecias locales y solo el código fuente, vamos a crear un archivo *.dockerignore* que va a permitir que se ignoren ciertas partes de la estructura del directorio.
 ```shell
 vi .dockerignore
