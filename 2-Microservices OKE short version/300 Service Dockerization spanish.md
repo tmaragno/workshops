@@ -71,7 +71,7 @@ sudo docker images
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
 <your username>/node-server     latest              ebb132c36bc6        24 seconds ago      678MB
 ```
-Se procede a correr un contenedor desde esa imagen. Esto lo hacemos de la siguiente forma, reemplazando *"<your username>"* con su usuario de *Docker Hub*:
+Se procede a correr un contenedor desde esa imagen. Esto lo hacemos de la siguiente forma, reemplazando ```*<your username>*``` con su usuario de *Docker Hub*:
 ```shell
 sudo docker run -p 8081:8081 -d --name server <your username>/node-server
 ```
