@@ -25,7 +25,7 @@ A continuación debemos crear un archivo denominado *package.json* que contenga 
 cd RESTServer
 vi package.json
 ```
-Para poder editar el archivo hay que entrar en modo de editar (presione *i*), luego *pegue el json abajo (right-click)*
+Para poder editar el archivo hay que entrar en modo de editar (presione *i* ), luego *pegue el json abajo (right-click)*
 ```json
 {
     "name": "rest_server",
@@ -41,7 +41,7 @@ Para poder editar el archivo hay que entrar en modo de editar (presione *i*), lu
     }
 }
 ```
-Para cerrar y guardar el archivo presionar las siguientes teclas en orden. *:* luego *w* luego *q* finalizando con *enter*
+Para cerrar y guardar el archivo presionar las siguientes teclas en orden. *:* luego *w*  y luego *q* (*:wq*) finalizando con *enter*
 
 Repetir el mismo procedimiento para crear un archivo denominado *server.js*
 ```sh
@@ -94,7 +94,7 @@ app.get('/sum', function (req, res) {
         res.end('{"result": {"operation":"' +num1+"+"+num2+'", "result":'+result+'}}');
 })
 ```
-Salir nuevamente con la misma combinación de teclas. (*esc* seguido de *:wq*)
+Guardar y salir nuevamente con la combinación de teclas (*esc* seguido de *:wq*).
 
 Pruebe el servicio recién construido en la siguiente dirección: <br/>
 http://localhost:8081/sum?num1=2&num2=2
